@@ -5,11 +5,14 @@ public:
         it = nums.begin();
         
         for (int i = 0; i < nums.size() ; i++){
+            
             if (nums[i] == val){
                 nums.erase(it--);
                 i--;
+               
             } 
             it++;
+           
         }
         
         return nums.size();
