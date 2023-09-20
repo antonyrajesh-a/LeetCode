@@ -1,27 +1,13 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        
-        vector<int> :: iterator it1 = nums.begin() ;
-        vector<int> :: iterator it2 = nums.begin() + 1 ;
-        
         int i=0;
-        
-        while ( it2 != nums.end() ){
-            
-            if ( *it1 == *it2 ) it2++;
-            
-            else{
-                
-                it1++; 
-                i++;
-                *it1 = *it2;
+        for(auto e : nums){
+            if ( i == 0 || nums[i - 1] != e ) {
+                nums[i] = e ; i++;
             }
-            
         }
         
-        return i+1;
-        
-        
+        return i;
     }
 };
